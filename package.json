@@ -10,10 +10,16 @@
     "type": "git",
     "url": "git://github.com/morishitter/tuan/git"
   },
-  "keywords": ["version control","debug","stdout"],
+  "keywords": [
+    "version control",
+    "debug",
+    "stdout"
+  ],
   "author": "Masaaki Morishita",
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
-  }
+  "dependencies": {
+    "moment": "^2.8.4",
+    "mkdirp": "^0.5.0"
+  },
+  "devDependencies": {}
 }
