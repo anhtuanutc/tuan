@@ -1,4 +1,4 @@
-# tuan [![Build Status](https://travis-ci.org/morishitter/tuan.svg)](https://travis-ci.org/morishitter/tuan)
+# tuan
 
 Version control system for the  standart output.
 

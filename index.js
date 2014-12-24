@@ -33,7 +33,19 @@ Tuan.prototype.add = function (message, command) {
             var fileName = command.split(' ')[1];
             var fileContents = fs.readFileSync(fileName, 'utf-8');
 
-            fs.writeFile('./tuan/' + message + '__' + dt.format('YYYY-MM-DD HH:mm:ss'), fileContents, function (err) {
+            mkdirp('.tuan/' + message + '__' + dt.format('YYYY-MM-DD HH:mm:ss'), function (err) {
+                if (err) {
+                    throw err;
+                }
+            })
+
+            fs.writeFile('./.tuan/' + message + '__' + dt.format('YYYY-MM-DD HH:mm:ss') + '/' + fileName, fileContents, function (err) {
+                if (err) {
+                    throw err;
+                }
+            });
+
+            fs.writeFile('./.tuan/' + message + '__' + dt.format('YYYY-MM-DD HH:mm:ss') + '/' + 'stdout', stdout, function (err) {
                 if (err) {
                     throw err;
                 }
@@ -46,7 +58,18 @@ Tuan.prototype.add = function (message, command) {
 
 
 Tuan.prototype.list = function () {
-    exec('ls ./tuan', function (err, stdout, stderr) {
+    exec('ls ./.tuan', function (err, stdout, stderr) {
+        if (!err) {
+            console.log(stdout);
+        } else {
+            throw err;
+        }
+    })
+};
+
+
+Tuan.prototype.trash = function () {
+    exec('rm -rf ./.tuan', function (err, stdout, stderr) {
         if (!err) {
             console.log(stdout);
         } else {

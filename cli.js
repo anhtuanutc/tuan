@@ -15,6 +15,7 @@ var argv = minimist(process.argv.slice(2), {
 var pkg = require('./package.json');
 var fs = require('fs');
 var Tuan = require('./');
+var tuan = new Tuan();
 
 
 if (argv.V) {
@@ -35,10 +36,22 @@ if (argv.h) {
 
 
 if (argv._[0] === 'init') {
+    tuan.init();
 }
+
 
 if (argv._[0] === 'add') {
+    var message = argv._.pop();
+    argv._.shift();
+    var command = argv._.join(' ');
+    tuan.add(message, command);
 }
 
+
 if (argv._[0] === 'list') {
+    tuan.list();
+}
+
+if (argv._[0] === 'trash') {
+    tuan.trash();
 }
