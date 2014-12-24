@@ -29,9 +29,10 @@ if (argv.h) {
     console.log('');
     console.log('Commands:');
     console.log('');
-    console.log('  init,     Start using tuan');
-    console.log('  add,      Add result of the stdout of the command');
-    console.log('  list,     Show all your `add` history');
+    console.log('  init,      Start using tuan');
+    console.log('  add,       Add result of the stdout of the command');
+    console.log('  list,      Show all your `add` history');
+    console.log('  trash,     Remove `.tuan` in the current directory');
 }
 
 

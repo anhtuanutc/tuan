@@ -5,10 +5,26 @@ Version control system for the  standart output.
 ## Installation
 
 ```shell
-$ npm install tuan
+$ npm install -g tuan
 ```
 
-## Example
+## How to use
+
+```shell
+$ tuan --help
+```
+
+```
+Usage: tuan [--versions] [--help]
+            <command> [<args>]
+
+Commands:
+
+  init,      Start using tuan
+  add,       Add result of the stdout of the command
+  list,      Show all your `add` history
+  trash,     Remove `.tuan` in the current directory
+```
 
 ## License
 
