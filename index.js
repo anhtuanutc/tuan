@@ -8,7 +8,7 @@ module.exports = Tuan;
 
 
 function Tuan () {
-    if (!(this instance of Tuan)) {
+    if (!(this instanceof Tuan)) {
         return new Tuan();
     }
 }
